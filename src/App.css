@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Chicle&family=Kanit:wght@100;200;300;400;500;600;700;800;900&family=League+Spartan:wght@300;700&family=Montserrat:wght@200;300;400;500;600;800&family=Playball&display=swap');
+
+#root {
+  --bg-color: #d4d4d4;
+  --primary-color: #30363b;
+  --card-color: #6d767e;
+  --highlight-color: #ff5100;
+
+  --transition: 0.8s ease-in-out;
+
+  --gap: 1.5rem;
+
+  --btn-padding: 0.5rem 2rem;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Arvo', serif;
+ 
+
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+  min-height: 100%;
+}
