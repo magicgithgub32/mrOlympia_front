@@ -5,3 +5,9 @@
     height: 20%;
 }
 
+.hero {
+    border-radius: 2%;
+    box-shadow: 4px 4px 11px -1px rgba(0,0,0,0.75);
+
+}
+

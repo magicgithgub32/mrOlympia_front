@@ -2,7 +2,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2rem;
-    height: 10%;
+    height: 6rem;
+    margin: 1rem;
+}
+
+.logo {
+    height: 100%;
 }
 
