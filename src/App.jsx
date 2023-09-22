@@ -1,16 +1,19 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import React from "react";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-import Hero from "./components/Hero/Hero";
+import Home from "./pages/Home/Home";
+import Winners from "./pages/Winners/Winners";
 
 const App = () => {
   return (
     <>
-      <Header />
-      <Hero />
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="*" element={<Home />}></Route>
+          <Route path="/winners" element={<Winners />}></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 };

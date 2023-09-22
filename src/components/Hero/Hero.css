@@ -2,12 +2,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20%;
+    height: 24rem;
 }
 
 .hero {
-    border-radius: 2%;
+    border-radius: var(--border-radius);
     box-shadow: 4px 4px 11px -1px rgba(0,0,0,0.75);
-
+    height: 100%;
 }
 
