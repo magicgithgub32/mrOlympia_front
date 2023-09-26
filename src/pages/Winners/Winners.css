@@ -1,0 +1,15 @@
+.winner-image-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.winner-image-wrapper {
+    height: 40rem;
+    width: 30rem;
+    object-fit: cover;
+}
+
+.winner-image {
+    height: 100%;
+    width: 100%;
+}
