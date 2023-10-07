@@ -2,12 +2,12 @@ import React from "react";
 import "../Button/Button.css";
 
 
-const PrevButton = ({ setContestYear, contestYear}) => {
-    const getPrevYear = () => {
-        setContestYear(contestYear - 1)
+const PrevButton = ({ setCurrentIndex}) => {
+    const goToPrevYear = () => {
+        setCurrentIndex((prevIndex) => prevIndex - 1);
     }
     return (
-<button className="prev-next-button" onClick={getPrevYear}>PREV YEAR</button>
+<button className="prev-next-button" onClick={goToPrevYear}>PREV YEAR</button>
     )
 }
 

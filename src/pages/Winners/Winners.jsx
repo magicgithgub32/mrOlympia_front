@@ -7,63 +7,61 @@ import { useState } from "react";
 import { useEffect } from "react";
 import PrevButton from "../../components/PrevNextButtons/PrevButton";
 import NextButton from "../../components/PrevNextButtons/NextButton";
-
 const Winners = () => {
-  const [allContests, setAllContests] = useState();
-  const [contestYear, setContestYear] = useState();
+  const [allContests, setAllContests] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    const getData = async () => {
+    const fetchData = async () => {
       try {
         const res = await fetch(`${import.meta.env.VITE_API_URL}/contests`);
         if (!res.ok) {
-          throw new Error(`HTTP Error! Status: ${res.status}`);
+          throw new Error(`HTTP error! Status: ${res.status}`);
         }
         const data = await res.json();
-        return data;
+        setAllContests(data);
       } catch (error) {
-        console.error("Error fetching data:", error);
-        throw error;
+        console.error("Fetching data failed", error);
       }
     };
-    getData()
-      .then((data) => {setAllContests(data) , setContestYear(data[0].year)})
-      .catch((error) => console.log("Data not found", error));
+    fetchData();
   }, []);
 
-  console.log(import.meta.env.VITE_API_URL);
-  console.log(allContests);
 
-  const currentYear = new Date().getFullYear()
+  const currentContest = allContests[currentIndex];
+
   return (
     <>
       <Logo />
       <Link to={"/"}>
         <Button buttonText={"HOME"} className={"back-home-button"} />
       </Link>
-      <div>
-        {allContests  && (
-          <section className={"winners-section"}>
-            <article className="year-article">
-              {contestYear > 1965 &&   
-              <PrevButton setContestYear={setContestYear} contestYear={contestYear} />
-}
-        <h2 className="contest-year">Year:  {contestYear}</h2> 
-        {contestYear < currentYear - 1 && 
-                <NextButton setContestYear={setContestYear} contestYear={contestYear} />
-              }
-        </article>
-        <article className="image-wrapper">
-        <img src={allContests[0].winner[0].image} alt={allContests[0].title} />
-        </article>
-        <article className="winner-name-article">
-        <h2>{allContests[0].winner[0].name}</h2>
-        <p>{allContests[0].age} years old</p>
-        </article>
+      {currentContest ? (
+        <section className={"winners-section"}>
+          <div className="year-article">
+            <h2 className="contest-year">Year: {currentContest.year}</h2>
+          </div>
+          <div className="image-wrapper">
+            <img src={currentContest.winner[0].image} alt={currentContest.winner[0].name} />
+          </div>
+          <div className="winner-name-article">
+            <h2>{currentContest.winner[0].name}</h2>
+            <p>{currentContest.age} years old</p>
+            <p>{currentContest.winner[0].nationality}</p>
+          </div>
+          <div className="navigation-buttons">
+            {currentIndex > 0 &&
+            <PrevButton setCurrentIndex={setCurrentIndex}/> }
+            {currentIndex < (allContests.length - 1) &&
+            <NextButton setCurrentIndex={setCurrentIndex}/> }
+            
+            
+            
+          </div>
         </section>
-        )
-}
-      </div>
+      ) : (
+        <p>Loading...</p>
+      )}
     </>
   );
 };
