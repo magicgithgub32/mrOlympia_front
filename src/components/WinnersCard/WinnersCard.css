@@ -1,0 +1,40 @@
+.year-article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contest-year {
+  display: flex;
+  margin-left: 1rem;
+}
+
+.winners-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 500px;
+  object-fit: contain;
+}
+
+.image-wrapper > img {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius);
+  box-shadow: 4px 4px 11px -1px rgba(0, 0, 0, 0.75);
+}
+
+.winner-name-article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
