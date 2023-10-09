@@ -8,13 +8,7 @@ const Header = () => {
   return (
     <header>
       <Logo />
-      <Link to={"/winners"}>
-        <Button
-          buttonText={"WINNERS"}
-          className={"winners-button"}
-          type="submit"
-        ></Button>
-      </Link>
+      
     </header>
   );
 };

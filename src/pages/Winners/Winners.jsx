@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import PrevButton from "../../components/PrevNextButtons/PrevButton";
 import NextButton from "../../components/PrevNextButtons/NextButton";
 import Winnerscard from "../../components/WinnersCard/WinnersCard";
+
 const Winners = () => {
   const [allContests, setAllContests] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
