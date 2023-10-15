@@ -1,10 +1,26 @@
 import React from "react";
-import "./WinnerDetails.css"
+import "./WinnerDetails.css";
+
+import { useLocation } from 'react-router-dom';
+
+
 
 const WinnerDetails = () => {
-    return (
-        <h1>Hello, I am the WinnerDetails</h1>
-    )
-}
+    const location = useLocation();
 
-export default WinnerDetails
+const currentContest = location.state?.currentContest;
+{console.log(location)}
+
+    return (
+        <>
+        {console.log(currentContest)}
+            {currentContest ? (
+                <p>{currentContest.year}</p>
+            ) : (
+                <p>Loading...</p>
+            )}
+        </>
+    );
+};
+
+export default WinnerDetails;

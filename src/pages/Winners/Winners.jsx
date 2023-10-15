@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import React from "react";
+import "./Winners.css"
 import Button from "../../components/Button/Button";
 import Logo from "../../components/Logo/Logo";
 import { useState } from "react";
@@ -34,6 +35,8 @@ const Winners = () => {
 
   const currentContest = allContests[currentIndex];
 
+
+
   return (
     <>
       <Logo />
@@ -43,7 +46,7 @@ const Winners = () => {
       {currentContest ? (
         <section className="winners-section">
           <Winnerscard currentContest={currentContest}/>
-          <div className="navigation-buttons">
+          <div className="navigations-buttons">
             {currentIndex > 0 &&
             <PrevButton setCurrentIndex={setCurrentIndex}/> }
             {currentIndex < (allContests.length - 1) &&
