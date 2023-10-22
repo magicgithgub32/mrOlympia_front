@@ -1,15 +1,24 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import React from "react";
+import React, { createContext, useState } from "react";
 import Home from "./pages/Home/Home";
 import Winners from "./pages/Winners/Winners";
 import WinnerDetails from "./pages/WinnerDetail/WinnerDetails";
 
+export const ContestContext = createContext()
 
 const App = () => {
+const [currentContest, setCurrentContest] = useState("")
+
 
   return (
     <>
+    <ContestContext.Provider
+      value={{
+        currentContest: currentContest,
+        setCurrentContest: setCurrentContest,
+      }}
+      >
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />}></Route>
@@ -20,6 +29,7 @@ const App = () => {
           <Route path="*" element={<Home />}></Route>
         </Routes>
       </BrowserRouter>
+      </ContestContext.Provider>
     </>
   );
 };

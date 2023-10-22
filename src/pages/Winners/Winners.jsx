@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import React from "react";
+import React, { useContext } from "react";
 import "./Winners.css"
 import Button from "../../components/Button/Button";
 import Logo from "../../components/Logo/Logo";
@@ -8,8 +8,12 @@ import { useEffect } from "react";
 import PrevButton from "../../components/PrevNextButtons/PrevButton";
 import NextButton from "../../components/PrevNextButtons/NextButton";
 import Winnerscard from "../../components/WinnersCard/WinnersCard";
+import { ContestContext } from "../../App";
 
 const Winners = () => {
+
+  const {currentContest, setCurrentContest} = useContext(ContestContext)
+
   const [allContests, setAllContests] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -33,7 +37,9 @@ const Winners = () => {
   }, []);
 
 
-  const currentContest = allContests[currentIndex];
+  useEffect(() => {
+    setCurrentContest(allContests[currentIndex]);
+}, [allContests, currentIndex]);
 
 
 

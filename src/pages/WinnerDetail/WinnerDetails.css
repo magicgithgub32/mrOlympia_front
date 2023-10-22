@@ -1,0 +1,11 @@
+.details-image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.details-image-wrapper > img {
+  height: 70%;
+  width: 70%;
+}

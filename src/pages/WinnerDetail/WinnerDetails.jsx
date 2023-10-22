@@ -1,22 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./WinnerDetails.css";
+import { ContestContext } from "../../App";
 
-import { useLocation } from 'react-router-dom';
 
 
 
 const WinnerDetails = () => {
-    const location = useLocation();
+    const {currentContest} = useContext(ContestContext)
 
-const currentContest = location.state?.currentContest;
-{console.log(location)}
 
     return (
         <>
-        {console.log(currentContest)}
+        {console.log("currentContest", currentContest)}
             {currentContest ? (
-                <p>{currentContest.year}</p>
-            ) : (
+                <div className="details-image-wrapper">
+            <img src={currentContest.winner[0].image} alt={currentContest.winner[0].name} />
+          </div>             ) : (
                 <p>Loading...</p>
             )}
         </>
@@ -24,3 +23,7 @@ const currentContest = location.state?.currentContest;
 };
 
 export default WinnerDetails;
+
+
+
+
