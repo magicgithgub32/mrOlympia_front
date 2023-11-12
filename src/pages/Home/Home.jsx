@@ -22,9 +22,8 @@ const Home = () => {
           <Link to={"/classic-physique"} >
         <Button buttonText={"CLASSIC-PHYSIQUE"} type="submit"/>
         </Link>
-        <Link to={"winners-with-no-crown"} >
+        <Link to={"winnersWithNoCrown"} >
           <Button buttonText={"WINNERS WITH NO CROWN"} type="submit"/>
-
         </Link>
         
         </article>

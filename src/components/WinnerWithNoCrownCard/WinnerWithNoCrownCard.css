@@ -1,0 +1,16 @@
+.winnersWithNoCrown-article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.winner-nocrown-image-wrapper {
+  height: 40rem;
+  width: 30rem;
+}
+
+.winner-nocrown-image-wrapper > img {
+  height: 100%;
+  width: 100%;
+}
