@@ -8,8 +8,10 @@ const WinnerWithNoCrownCard = ({ allNoCrownWinners }) => {
       <div className="winner-nocrown-image-wrapper">
         <img src={allNoCrownWinner.image} alt={allNoCrownWinner.name}></img>
       </div>
-      <h4>{allNoCrownWinner.name}</h4>
-      <p>{allNoCrownWinner.nationality}</p>
+      <div className="no-crown-info">
+        <h4>{allNoCrownWinner.name}</h4>
+        <p>{allNoCrownWinner.nationality}</p>
+      </div>
     </article>
   ));
 };

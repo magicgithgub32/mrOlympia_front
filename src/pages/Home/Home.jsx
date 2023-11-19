@@ -12,23 +12,25 @@ const Home = () => {
       <Header />
       <section className="home-main-section">
         <article className="home-buttons">
-        <Link to={"/winners"}>
-        <Button
-          buttonText={"WINNERS"}
-          className={"winners-button"}
-          type="submit"
-        />
-        </Link>
-          <Link to={"/classic-physique"} >
-        <Button buttonText={"CLASSIC-PHYSIQUE"} type="submit"/>
-        </Link>
-        <Link to={"winnersWithNoCrown"} >
-          <Button buttonText={"WINNERS WITH NO CROWN"} type="submit"/>
-        </Link>
-        
+          <Link to={"/winners"}>
+            <Button
+              buttonText={"WINNERS"}
+              className={"winners-button"}
+              type="submit"
+            />
+          </Link>
+          <Link to={"/classic-physique"}>
+            <Button buttonText={"CLASSIC-PHYSIQUE"} type="submit" />
+          </Link>
+          <Link to={"winnersWithNoCrown"}>
+            <Button buttonText={"WINNERS WITH NO CROWN"} type="submit" />
+          </Link>
+
+          <Link to={"bodybuilders-and-cinema"}>
+            <Button buttonText={"BODYBUILDERS AND CINEMA"} type="submit" />
+          </Link>
         </article>
         <article className="hero-wrapper">
-
           <Hero />
         </article>
       </section>

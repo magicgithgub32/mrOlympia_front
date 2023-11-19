@@ -37,15 +37,8 @@ const WinnersWithNoCrown = () => {
       </Link>
 
       <section className="winnersWithNoCrown-section">
+        <h1 className="winners-withnocrown-title">WINNERS WITH NO CROWN</h1>
         <WinnerWithNoCrownCard allNoCrownWinners={allNoCrownWinners} />
-        {/* {allNoCrownWinners.map((allNoCrownWinner, index) => (
-          <article className="winnersWithNoCrown-article" key={index}>
-            <h2>Era: {allNoCrownWinner.era}</h2>
-            <img src={allNoCrownWinner.image}></img>
-            <h4>{allNoCrownWinner.name}</h4>
-            <p>{allNoCrownWinner.nationality}</p>
-          </article>
-        ))} */}
       </section>
     </>
   );

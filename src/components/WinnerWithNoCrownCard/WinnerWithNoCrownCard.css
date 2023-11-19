@@ -1,8 +1,15 @@
+.winnersWithNoCrown-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
 .winnersWithNoCrown-article {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.3rem;
 }
 
 .winner-nocrown-image-wrapper {
@@ -13,4 +20,12 @@
 .winner-nocrown-image-wrapper > img {
   height: 100%;
   width: 100%;
+  border-radius: var(--border-radius);
+  box-shadow: 4px 4px 11px -1px rgba(0, 0, 0, 0.75);
+}
+
+.no-crown-info {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0.5rem;
 }

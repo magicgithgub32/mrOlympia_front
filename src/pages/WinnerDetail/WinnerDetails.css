@@ -8,4 +8,10 @@
 .details-image-wrapper > img {
   height: 70%;
   width: 70%;
+  border-radius: var(--border-radius);
+  box-shadow: 4px 4px 11px -1px rgba(0, 0, 0, 0.75);
+}
+
+.back-button {
+  margin: 2rem;
 }
