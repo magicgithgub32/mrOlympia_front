@@ -1,0 +1,13 @@
+.classics-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.classics-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  color: var(--highlight-color);
+  margin: 1.5rem;
+}

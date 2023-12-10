@@ -5,31 +5,37 @@ import Home from "./pages/Home/Home";
 import Winners from "./pages/Winners/Winners";
 import WinnerDetails from "./pages/WinnerDetail/WinnerDetails";
 import WinnersWithNoCrown from "./pages/WinnersWithNoCrown/WinnersWithNoCrown";
+import ClassicPhysique from "./pages/ClassicPhysique/ClassicPhysique";
 
-export const ContestContext = createContext()
+export const ContestContext = createContext();
 
 const App = () => {
-const [currentContest, setCurrentContest] = useState("")
-
+  const [currentContest, setCurrentContest] = useState("");
 
   return (
     <>
-    <ContestContext.Provider
-      value={{
-        currentContest: currentContest,
-        setCurrentContest: setCurrentContest,
-      }}
+      <ContestContext.Provider
+        value={{
+          currentContest: currentContest,
+          setCurrentContest: setCurrentContest,
+        }}
       >
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/winners" element={<Winners />}></Route>
-          <Route path="/winnerDetails" element={<WinnerDetails />}></Route>
-          {/* <Route path="classicPhysique" element={<ClassicPhysique />}></Route> */}
-          <Route path="winnersWithNoCrown" element={<WinnersWithNoCrown />}></Route>
-          <Route path="*" element={<Home />}></Route>
-        </Routes>
-      </BrowserRouter>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/winners" element={<Winners />}></Route>
+            <Route path="/winnerDetails" element={<WinnerDetails />}></Route>
+            <Route
+              path="/classic-physique"
+              element={<ClassicPhysique />}
+            ></Route>
+            <Route
+              path="winnersWithNoCrown"
+              element={<WinnersWithNoCrown />}
+            ></Route>
+            <Route path="*" element={<Home />}></Route>
+          </Routes>
+        </BrowserRouter>
       </ContestContext.Provider>
     </>
   );
