@@ -6,6 +6,7 @@ import Winners from "./pages/Winners/Winners";
 import WinnerDetails from "./pages/WinnerDetail/WinnerDetails";
 import WinnersWithNoCrown from "./pages/WinnersWithNoCrown/WinnersWithNoCrown";
 import ClassicPhysique from "./pages/ClassicPhysique/ClassicPhysique";
+import BodyBuildersAndCinema from "./pages/BodybuildersAndCinema/BodybuildersAndCinema";
 
 export const ContestContext = createContext();
 
@@ -32,6 +33,10 @@ const App = () => {
             <Route
               path="winnersWithNoCrown"
               element={<WinnersWithNoCrown />}
+            ></Route>
+            <Route
+              path="/bodybuilders-and-cinema"
+              element={<BodyBuildersAndCinema />}
             ></Route>
             <Route path="*" element={<Home />}></Route>
           </Routes>
