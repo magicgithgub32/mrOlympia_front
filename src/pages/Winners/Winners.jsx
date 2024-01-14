@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import React, { useContext } from "react";
-import "./Winners.css"
+import "./Winners.css";
 import Button from "../../components/Button/Button";
 import Logo from "../../components/Logo/Logo";
 import { useState } from "react";
@@ -11,8 +11,7 @@ import Winnerscard from "../../components/WinnersCard/WinnersCard";
 import { ContestContext } from "../../App";
 
 const Winners = () => {
-
-  const {currentContest, setCurrentContest} = useContext(ContestContext)
+  const { currentContest, setCurrentContest } = useContext(ContestContext);
 
   const [allContests, setAllContests] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -20,9 +19,8 @@ const Winners = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        console.log(`${import.meta.env.VITE_API_URL}/contests`);
-
-        const res = await fetch(`${import.meta.env.VITE_API_URL}/contests`);
+        // const res = await fetch(`${import.meta.env.VITE_API_URL}/contests`);
+        const res = await fetch(`${import.meta.env.SERVER_URL}/contests`);
 
         if (!res.ok) {
           throw new Error(`HTTP error! Status: ${res.status}`);
@@ -36,12 +34,9 @@ const Winners = () => {
     fetchData();
   }, []);
 
-
   useEffect(() => {
     setCurrentContest(allContests[currentIndex]);
-}, [allContests, currentIndex]);
-
-
+  }, [allContests, currentIndex]);
 
   return (
     <>
@@ -51,14 +46,15 @@ const Winners = () => {
       </Link>
       {currentContest ? (
         <section className="winners-section">
-          <Winnerscard currentContest={currentContest}/>
+          <Winnerscard currentContest={currentContest} />
           <div className="navigations-buttons">
-            {currentIndex > 0 &&
-            <PrevButton setCurrentIndex={setCurrentIndex}/> }
-            {currentIndex < (allContests.length - 1) &&
-            <NextButton setCurrentIndex={setCurrentIndex}/> }  
+            {currentIndex > 0 && (
+              <PrevButton setCurrentIndex={setCurrentIndex} />
+            )}
+            {currentIndex < allContests.length - 1 && (
+              <NextButton setCurrentIndex={setCurrentIndex} />
+            )}
           </div>
-         
         </section>
       ) : (
         <p>Loading...</p>

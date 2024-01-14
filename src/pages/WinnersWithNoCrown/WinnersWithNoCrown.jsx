@@ -11,10 +11,9 @@ const WinnersWithNoCrown = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        console.log(`${import.meta.env.VITE_API_URL}/noCrownWinners`);
-
         const res = await fetch(
-          `${import.meta.env.VITE_API_URL}/noCrownWinners`
+          // `${import.meta.env.VITE_API_URL}/noCrownWinners`
+          `${import.meta.env.SERVER_URL}/noCrownWinners`
         );
 
         if (!res.ok) {

@@ -11,7 +11,8 @@ const BodyBuildersAndCinema = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(`${import.meta.env.VITE_API_URL}/bbCinema`);
+        // const res = await fetch(`${import.meta.env.VITE_API_URL}/bbCinema`);
+        const res = await fetch(`${import.meta.env.SERVER_URL}/bbCinema`);
 
         if (!res.ok) {
           throw new Error(`HTTP error: Status: ${res.status}`);
