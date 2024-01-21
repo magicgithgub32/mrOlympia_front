@@ -12,7 +12,8 @@ const ClassicPhysique = () => {
     const fetchData = async () => {
       try {
         // const res = await fetch(`${import.meta.env.VITE_API_URL}/classics`);
-        const res = await fetch(`${import.meta.env.SERVER_URL}/classics`);
+        // const res = await fetch(`${import.meta.env.SERVER_URL}/classics`);
+        const res = await fetch("https://mrolympia.onrender.com/api/classics");
 
         if (!res.ok) {
           throw new Error(`HTTP error! Status: ${res.status}`);

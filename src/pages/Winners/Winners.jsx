@@ -20,7 +20,8 @@ const Winners = () => {
     const fetchData = async () => {
       try {
         // const res = await fetch(`${import.meta.env.VITE_API_URL}/contests`);
-        const res = await fetch(`${import.meta.env.SERVER_URL}/contests`);
+        // const res = await fetch(`${import.meta.env.SERVER_URL}/contests`);
+        const res = await fetch("https://mrolympia.onrender.com/api/contests");
 
         if (!res.ok) {
           throw new Error(`HTTP error! Status: ${res.status}`);
