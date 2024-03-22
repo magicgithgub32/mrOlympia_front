@@ -1,5 +1,5 @@
 import React from "react";
-import "./BodyBuildersAndCinemaCard.css";
+import "./BodybuildersAndCinemaCard.css";
 
 const BodyBuildersAndCinemaCard = ({ allBbAndCinema }) => {
   return allBbAndCinema.map((item, index) => (
