@@ -1,4 +1,4 @@
-import "./BodyBuildersAndCinema.css";
+import "./BodybuildersAndCinema.css";
 import React, { useEffect, useState } from "react";
 import Logo from "../../components/Logo/Logo";
 import { Link } from "react-router-dom";
